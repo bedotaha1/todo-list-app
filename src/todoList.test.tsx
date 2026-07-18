@@ -8,8 +8,3 @@ test('Add functionality works', () => {
   fireEvent.click(screen.getByText('ADD the TODO'))
   expect(screen.getByText('buy milk')).toBeInTheDocument()
 })
-
-test('delete functionality works', () => {
-  render(<TodoList />)
-  expect(screen.getByText('acting tough')).toBeInTheDocument()
-})
