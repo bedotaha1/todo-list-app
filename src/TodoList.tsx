@@ -17,7 +17,7 @@ export default function App() {
         value={text}
         onChange={e => setText(e.target.value)}
         type="text"
-        placeholder="Type the to-do here"
+        placeholder="Add a new task..."
       />
       <button onClick={handleAdd}>ADD the TODO</button>
       <ul>
