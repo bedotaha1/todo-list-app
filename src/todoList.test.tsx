@@ -3,7 +3,7 @@ import TodoList from './TodoList'
 
 test('Add functionality works', () => {
   render(<TodoList />)
-  const input = screen.getByPlaceholderText('Hello D')
+  const input = screen.getByPlaceholderText('Add a new task...')
   fireEvent.change(input, { target: { value: 'buy milk' } })
   fireEvent.click(screen.getByText('ADD the TODO'))
   expect(screen.getByText('buy milk')).toBeInTheDocument()
