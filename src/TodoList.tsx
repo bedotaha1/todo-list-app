@@ -20,10 +20,13 @@ export default function App() {
         placeholder="Add a new task..."
       />
       <button onClick={handleAdd}>ADD the TODO</button>
-      <ul>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {todos.map(todo => {
           return (
-            <li key={todo.id}>
+            <li
+              key={todo.id}
+              className="flex justify-center items-baseline gap-6"
+            >
               <input
                 type="checkbox"
                 checked={todo.done}
@@ -31,7 +34,7 @@ export default function App() {
                   setTodos(todos => toggleTodo(todos, todo.id))
                 }}
               />
-              <span>{todo.text}</span>{' '}
+              <span className="text-3xl">{todo.text}</span>{' '}
               <button
                 onClick={() => {
                   setTodos(todos => removeTodo(todos, todo.id))
