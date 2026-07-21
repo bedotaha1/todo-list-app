@@ -1,7 +1,7 @@
 export interface Todo {
   id: number
   text: string
-  done: boolean
+  isDone: boolean
 }
 
 export function addTodo(todos: Todo[], text: string): Todo[] {
@@ -9,7 +9,7 @@ export function addTodo(todos: Todo[], text: string): Todo[] {
   const newTodo = {
     id: Date.now(),
     text: text,
-    done: false,
+    isDone: false,
   }
   return [...todos, newTodo]
 }
@@ -20,6 +20,6 @@ export function removeTodo(todos: Todo[], id: number): Todo[] {
 
 export function toggleTodo(todos: Todo[], id: number): Todo[] {
   return todos.map(todo =>
-    todo.id === id ? { ...todo, done: !todo.done } : todo,
+    todo.id === id ? { ...todo, isDone: !todo.isDone } : todo,
   )
 }
